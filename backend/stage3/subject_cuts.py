@@ -28,6 +28,8 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
         {
             "cut_number": 1,
             "cut_name": "Cut 1 (Screening)",
+            "cut_date": "2026-01-15",
+            "date": "2026-01-15",
             "protocol_version": "v1.0",
             "visit": "Screening (Day -14)",
             "treatment": "Pre-treatment",
@@ -35,9 +37,9 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
             "dose": "0 mg",
             "status": "Completed",
             "labs": [
-                {"test": "ALT", "value": 26.0, "unit": "U/L", "reference_range": "7-56", "status": "NORMAL"},
-                {"test": "BILI", "value": 0.7, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "NORMAL"},
-                {"test": "GLUC", "value": 115.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL"},
+                {"test": "ALT", "value": 26.0, "unit": "U/L", "reference_range": "7-56", "status": "NORMAL", "date": "2026-01-15", "collection_date": "2026-01-15"},
+                {"test": "BILI", "value": 0.7, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "NORMAL", "date": "2026-01-15", "collection_date": "2026-01-15"},
+                {"test": "GLUC", "value": 115.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL", "date": "2026-01-15", "collection_date": "2026-01-15"},
             ],
             "adverse_events": [],
             "findings": [],
@@ -50,6 +52,8 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
         {
             "cut_number": 2,
             "cut_name": "Cut 2 (Baseline / First Dose)",
+            "cut_date": "2026-01-30",
+            "date": "2026-01-30",
             "protocol_version": "v1.0",
             "visit": "Baseline (Day 1)",
             "treatment": treatment_name,
@@ -57,9 +61,9 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
             "dose": "50 mg",
             "status": "Completed",
             "labs": [
-                {"test": "ALT", "value": 31.0, "unit": "U/L", "reference_range": "7-56", "status": "NORMAL"},
-                {"test": "BILI", "value": 0.8, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "NORMAL"},
-                {"test": "GLUC", "value": 118.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL"},
+                {"test": "ALT", "value": 31.0, "unit": "U/L", "reference_range": "7-56", "status": "NORMAL", "date": "2026-01-30", "collection_date": "2026-01-30"},
+                {"test": "BILI", "value": 0.8, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "NORMAL", "date": "2026-01-30", "collection_date": "2026-01-30"},
+                {"test": "GLUC", "value": 118.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL", "date": "2026-01-30", "collection_date": "2026-01-30"},
             ],
             "adverse_events": [],
             "findings": [],
@@ -72,6 +76,8 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
         {
             "cut_number": 3,
             "cut_name": "Cut 3 (Week 2)",
+            "cut_date": "2026-02-15",
+            "date": "2026-02-15",
             "protocol_version": "v1.0",
             "visit": "Week 2 (Day 14)",
             "treatment": treatment_name,
@@ -79,12 +85,12 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
             "dose": "100 mg" if is_dose_dev else "50 mg",
             "status": "Completed",
             "labs": [
-                {"test": "ALT", "value": 48.0, "unit": "U/L", "reference_range": "7-56", "status": "NORMAL"},
-                {"test": "BILI", "value": 1.0, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "NORMAL"},
-                {"test": "GLUC", "value": 114.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL"},
+                {"test": "ALT", "value": 48.0, "unit": "U/L", "reference_range": "7-56", "status": "NORMAL", "date": "2026-02-15", "collection_date": "2026-02-15"},
+                {"test": "BILI", "value": 1.0, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "NORMAL", "date": "2026-02-15", "collection_date": "2026-02-15"},
+                {"test": "GLUC", "value": 114.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL", "date": "2026-02-15", "collection_date": "2026-02-15"},
             ],
             "adverse_events": [
-                {"term": "Severe Abdominal Pain (Hospitalized)", "severity": "Grade 3", "hospitalized": "Yes"}
+                {"term": "Severe Abdominal Pain (Hospitalized)", "severity": "Grade 3", "hospitalized": "Yes", "start_date": "2026-02-14", "date": "2026-02-14"}
             ] if is_sae else [],
             "findings": [
                 {"id": f"FND-{subject_id}-DOSE", "title": "Protocol Dose Deviation (100mg administered)", "severity": "HIGH"}
@@ -104,6 +110,8 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
         {
             "cut_number": 4,
             "cut_name": "Cut 4 (Week 4)",
+            "cut_date": "2026-03-01",
+            "date": "2026-03-01",
             "protocol_version": "v1.0",
             "visit": "Week 4 (Day 28)",
             "treatment": treatment_name,
@@ -111,11 +119,11 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
             "dose": "50 mg",
             "status": "Completed",
             "labs": [
-                {"test": "ALT", "value": 138.0 if is_hys else 42.0, "unit": "U/L", "reference_range": "7-56", "status": "HIGH" if is_hys else "NORMAL"},
-                {"test": "BILI", "value": 1.5 if is_hys else 0.9, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "HIGH" if is_hys else "NORMAL"},
-                {"test": "GLUC", "value": 116.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL"},
+                {"test": "ALT", "value": 138.0 if is_hys else 42.0, "unit": "U/L", "reference_range": "7-56", "status": "HIGH" if is_hys else "NORMAL", "date": "2026-03-01", "collection_date": "2026-03-01"},
+                {"test": "BILI", "value": 1.5 if is_hys else 0.9, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "HIGH" if is_hys else "NORMAL", "date": "2026-03-01", "collection_date": "2026-03-01"},
+                {"test": "GLUC", "value": 116.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL", "date": "2026-03-01", "collection_date": "2026-03-01"},
             ],
-            "adverse_events": [{"term": "Mild Nausea", "severity": "Grade 1", "hospitalized": "No"}] if is_hys else [],
+            "adverse_events": [{"term": "Mild Nausea", "severity": "Grade 1", "hospitalized": "No", "start_date": "2026-02-28", "date": "2026-02-28"}] if is_hys else [],
             "findings": [
                 {"id": f"FND-{subject_id}-ALT", "title": "Elevated Alanine Aminotransferase (ALT > 2x ULN)", "severity": "MEDIUM"}
             ] if is_hys else [],
@@ -130,6 +138,8 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
         {
             "cut_number": 5,
             "cut_name": "Cut 5 (Week 6)",
+            "cut_date": "2026-03-15",
+            "date": "2026-03-15",
             "protocol_version": "v1.0",
             "visit": "Week 6 (Day 42)",
             "treatment": treatment_name,
@@ -137,11 +147,11 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
             "dose": "50 mg",
             "status": "Completed",
             "labs": [
-                {"test": "ALT", "value": 175.0 if is_hys else 38.0, "unit": "U/L", "reference_range": "7-56", "status": "HIGH" if is_hys else "NORMAL"},
-                {"test": "BILI", "value": 1.8 if is_hys else 0.8, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "HIGH" if is_hys else "NORMAL"},
-                {"test": "GLUC", "value": 112.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL"},
+                {"test": "ALT", "value": 175.0 if is_hys else 38.0, "unit": "U/L", "reference_range": "7-56", "status": "HIGH" if is_hys else "NORMAL", "date": "2026-03-15", "collection_date": "2026-03-15"},
+                {"test": "BILI", "value": 1.8 if is_hys else 0.8, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "HIGH" if is_hys else "NORMAL", "date": "2026-03-15", "collection_date": "2026-03-15"},
+                {"test": "GLUC", "value": 112.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL", "date": "2026-03-15", "collection_date": "2026-03-15"},
             ],
-            "adverse_events": [{"term": "Fatigue", "severity": "Grade 2", "hospitalized": "No"}] if is_hys else [],
+            "adverse_events": [{"term": "Fatigue", "severity": "Grade 2", "hospitalized": "No", "start_date": "2026-03-14", "date": "2026-03-14"}] if is_hys else [],
             "findings": [
                 {"id": f"FND-{subject_id}-HEP", "title": "Progressive Hepatic Enzyme Elevation (Monitoring status)", "severity": "HIGH"}
             ] if is_hys else [],
@@ -158,6 +168,8 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
         {
             "cut_number": 6,
             "cut_name": "Cut 6 (Week 8)",
+            "cut_date": "2026-04-01",
+            "date": "2026-04-01",
             "protocol_version": "v2.0",
             "visit": "Week 8 (Day 56)",
             "treatment": treatment_name,
@@ -165,13 +177,13 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
             "dose": "50 mg",
             "status": "Completed",
             "labs": [
-                {"test": "ALT", "value": 239.7 if is_hys else 35.0, "unit": "U/L", "reference_range": "7-56", "status": "CRITICAL" if is_hys else "NORMAL"},
-                {"test": "BILI", "value": 3.2 if is_hys else 0.7, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "CRITICAL" if is_hys else "NORMAL"},
-                {"test": "GLUC", "value": 6.4 if is_glucose_site else 115.0, "unit": "mmol/L" if is_glucose_site else "mg/dL", "reference_range": "3.9-6.1" if is_glucose_site else "70-110", "status": "DATA_INTEGRITY" if is_glucose_site else "NORMAL"},
+                {"test": "ALT", "value": 239.7 if is_hys else 35.0, "unit": "U/L", "reference_range": "7-56", "status": "CRITICAL" if is_hys else "NORMAL", "date": "2026-04-01", "collection_date": "2026-04-01"},
+                {"test": "BILI", "value": 3.2 if is_hys else 0.7, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "CRITICAL" if is_hys else "NORMAL", "date": "2026-04-01", "collection_date": "2026-04-01"},
+                {"test": "GLUC", "value": 6.4 if is_glucose_site else 115.0, "unit": "mmol/L" if is_glucose_site else "mg/dL", "reference_range": "3.9-6.1" if is_glucose_site else "70-110", "status": "DATA_INTEGRITY" if is_glucose_site else "NORMAL", "date": "2026-04-01", "collection_date": "2026-04-01"},
             ],
             "adverse_events": [
-                {"term": "Right Upper Quadrant Tenderness", "severity": "Grade 2", "hospitalized": "No"},
-                {"term": "Fatigue", "severity": "Grade 2", "hospitalized": "No"}
+                {"term": "Right Upper Quadrant Tenderness", "severity": "Grade 2", "hospitalized": "No", "start_date": "2026-03-30", "date": "2026-03-30"},
+                {"term": "Fatigue", "severity": "Grade 2", "hospitalized": "No", "start_date": "2026-03-31", "date": "2026-03-31"}
             ] if is_hys else [],
             "findings": [
                 {"id": f"FND-{subject_id}-HYS", "title": "Hy's Law Candidate (ALT > 3x ULN, BILI > 2x ULN)", "severity": "CRITICAL"}
@@ -193,6 +205,8 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
         {
             "cut_number": 7,
             "cut_name": "Cut 7 (Week 12)",
+            "cut_date": "2026-04-15",
+            "date": "2026-04-15",
             "protocol_version": "v2.0",
             "visit": "Week 12 (Day 84)",
             "treatment": f"{treatment_name} (Withheld)" if is_hys else treatment_name,
@@ -200,9 +214,9 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
             "dose": "0 mg (Temporary Hold)" if is_hys else "50 mg",
             "status": "Completed",
             "labs": [
-                {"test": "ALT", "value": 155.0 if is_hys else 32.0, "unit": "U/L", "reference_range": "7-56", "status": "HIGH" if is_hys else "NORMAL"},
-                {"test": "BILI", "value": 1.9 if is_hys else 0.8, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "HIGH" if is_hys else "NORMAL"},
-                {"test": "GLUC", "value": 116.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL"},
+                {"test": "ALT", "value": 155.0 if is_hys else 32.0, "unit": "U/L", "reference_range": "7-56", "status": "HIGH" if is_hys else "NORMAL", "date": "2026-04-15", "collection_date": "2026-04-15"},
+                {"test": "BILI", "value": 1.9 if is_hys else 0.8, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "HIGH" if is_hys else "NORMAL", "date": "2026-04-15", "collection_date": "2026-04-15"},
+                {"test": "GLUC", "value": 116.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL", "date": "2026-04-15", "collection_date": "2026-04-15"},
             ],
             "adverse_events": [],
             "findings": [
@@ -217,6 +231,8 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
         {
             "cut_number": 8,
             "cut_name": "Cut 8 (Week 16 - Current Cut)",
+            "cut_date": "2026-05-01",
+            "date": "2026-05-01",
             "protocol_version": "v2.0",
             "visit": "Week 16 (Day 112)",
             "treatment": f"{treatment_name} (Reduced Dose)" if is_hys else treatment_name,
@@ -224,9 +240,9 @@ def get_subject_surveillance_data(subject_id: str, db=None) -> List[Dict[str, An
             "dose": "25 mg (Safety Reduction)" if is_hys else "50 mg",
             "status": "Completed",
             "labs": [
-                {"test": "ALT", "value": 52.0 if is_hys else 30.0, "unit": "U/L", "reference_range": "7-56", "status": "NORMAL"},
-                {"test": "BILI", "value": 1.0 if is_hys else 0.7, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "NORMAL"},
-                {"test": "GLUC", "value": 114.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL"},
+                {"test": "ALT", "value": 52.0 if is_hys else 30.0, "unit": "U/L", "reference_range": "7-56", "status": "NORMAL", "date": "2026-05-01", "collection_date": "2026-05-01"},
+                {"test": "BILI", "value": 1.0 if is_hys else 0.7, "unit": "mg/dL", "reference_range": "0.2-1.2", "status": "NORMAL", "date": "2026-05-01", "collection_date": "2026-05-01"},
+                {"test": "GLUC", "value": 114.0, "unit": "mg/dL", "reference_range": "70-110", "status": "NORMAL", "date": "2026-05-01", "collection_date": "2026-05-01"},
             ],
             "adverse_events": [],
             "findings": [
